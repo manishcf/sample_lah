@@ -58,11 +58,12 @@ export default function UserQuery() {
         .post("http://localhost:9000/api/v1/queries", {
           query: JSON.stringify(query),
         })
-        .then((result) => {
+        .then(() => {
           setBusy(false);
+          setQuery({});
           enqueueSnackbar("Success!", { variant: "success" });
         })
-        .catch((error) => {
+        .catch(() => {
           setBusy(false);
           enqueueSnackbar("Something went wrong", { variant: "error" });
         });
