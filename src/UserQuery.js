@@ -56,7 +56,6 @@ export default function UserQuery() {
 
     if (!isError) {
       setBusy(true);
-      console.log("Calling APi", process.env.BASE_URL_LOCAL)
       axios
         .post(`${baseURL}/api/v1/queries`, {query: JSON.stringify(query),})
         .then(() => {
